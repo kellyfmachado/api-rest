@@ -33,11 +33,4 @@ public class Author {
         this.bio = bio;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }

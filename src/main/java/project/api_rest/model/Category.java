@@ -31,12 +31,4 @@ public class Category {
         this.description = description;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
 }
