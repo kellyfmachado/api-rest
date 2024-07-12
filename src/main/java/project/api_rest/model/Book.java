@@ -1,7 +1,6 @@
 package project.api_rest.model;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity
@@ -12,10 +11,23 @@ public class Book {
     private Long id;
     private String title;
     private Date publicationDate;
+
     @ManyToOne
-    private Author autor;
+    @JoinColumn(name = "author_id")
+    private Author author;
+
     @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
+
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -33,13 +45,12 @@ public class Book {
         this.publicationDate = publicationDate;
     }
 
-    public Author getAutor() {
-
-        return autor;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAutor(Author autor) {
-        this.autor = autor;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public Category getCategory() {
